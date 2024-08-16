@@ -3,21 +3,27 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Encabezado */
 header {
-    background-color: #333;
+    background-color: #0f3460;
     color: white;
-    padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    flex-direction: column;
 }
 
-header .logo {
-    font-size: 24px;
+header .logo img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 header nav ul {
@@ -25,10 +31,11 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
 }
 
 header nav ul li {
-    margin-left: 20px;
+    margin-right: 20px;
 }
 
 header nav ul li a {
@@ -42,8 +49,9 @@ header nav ul li a:hover {
 
 /* Contenido principal */
 main {
+    flex: 1;
     padding: 20px;
-    background-color: white;
+    background-color: #f4f4f4;
     margin: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -61,17 +69,30 @@ section {
 }
 
 section .tarjeta {
-    background-color: white;
+    background-color: #0f3460;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 30%;
     text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: white;
+}
+
+section .tarjeta img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+section .tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 /* Pie de página */
 footer {
-    background-color: #333;
+    background-color: #0f3460;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -80,11 +101,51 @@ footer {
     width: 100%;
 }
 
-footer a {
-    color: #f4f4f4;
-    text-decoration: none;
+footer img {
+    width: 30px;
+    margin: 0 10px;
+    border-radius: 50%;
 }
 
-footer a:hover {
-    text-decoration: underline;
+footer p {
+    margin-bottom: 10px;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    section .tarjeta {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    main h1 {
+        font-size: 24px;
+    }
+
+    section .tarjeta h2 {
+        font-size: 20px;
+    }
+
+    section .tarjeta p {
+        font-size: 16px;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
 }
